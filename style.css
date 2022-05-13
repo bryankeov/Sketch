@@ -1,12 +1,35 @@
+
 #container {
-    max-height: 960px;
-    max-width: 960px;
-    background-color: brown;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    width: 960px;
+    height: 960px;
     padding: 0px;
     margin: 0px;
+}
+
+#square {
+    outline: 1px solid;
+    width: 60px;
+    height: 60px;
+    float: left;
+    padding: 0px;
+    margin: 0px;
+}
+
+/*body {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+}
+
+#container {
+    height: 960px;
+    width: 960px;
+    background-color: brown;
+    display: flex;
+    padding: 0px;
+    margin: 0px;
+    flex-wrap: wrap;
 }
 
 #square {
@@ -14,7 +37,6 @@
     border-color: black;
     background-color: blue;
     flex: 1;
-    height: 50px;
-    min-width: 50px;
+    height: auto;
 
-}
+}*/
