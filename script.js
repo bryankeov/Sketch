@@ -1,20 +1,31 @@
 let container = document.getElementById("container");
 
 function createDiv(n) {
-  for(let i = 0; i < (n*n); i++) {
-      const div = document.createElement('div');
-      div.className = 'square';
-      container.appendChild(div);
+  for(let i = 0; i < n; i++) {
+      const rowDiv = document.createElement('div');
+      rowDiv.className = 'rowDiv';
+      container.appendChild(rowDiv);
+      for(let j = 0; j < n; j++) {
+          const columnDiv = document.createElement('div');
+          columnDiv.className = 'columnDiv';
+          rowDiv.appendChild(columnDiv);
+      }
   }
 }
+createDiv(16)
 
-/*n *= n
-for (let i = 0; i < n; i++) {
-  container.appendChild(div.cloneNode(true));
-  */
-createDiv(32)
+function gridSize() {
+    let size = prompt('Please enter number below 100');
+    while (container.firstChild) {
+        container.removeChild(container.firstChild)
+    }
+    if (size <= 100) {
+        return createDiv(size);
+    }
+}
 
-const divEls = document.querySelectorAll('.square');
+
+const divEls = document.querySelectorAll('.rowDiv .columnDiv');
 if (divEls) {
     divEls.forEach (el => {
         el.addEventListener('mouseenter', (event) => {
@@ -26,12 +37,5 @@ if (divEls) {
         }
     });
 });
-}
-
-function gridSize() {
-    let size = prompt('Please enter number below 100')
-    if (size <= 100) {
-
-    }
 }
 
