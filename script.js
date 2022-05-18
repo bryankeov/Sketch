@@ -20,22 +20,15 @@ function gridSize() {
         container.removeChild(container.firstChild)
     }
     if (size <= 100) {
-        return createDiv(size);
+        createDiv(size);
+    } else {
+        alert("Invalid number")
     }
 }
 
 
-const divEls = document.querySelectorAll('.rowDiv .columnDiv');
-if (divEls) {
-    divEls.forEach (el => {
-        el.addEventListener('mouseenter', (event) => {
-        const currentBg = event.target.style.background;
-        if(currentBg !== 'black') {
-            event.target.style.background = 'black';
-        } else {
-            event.target.style.background = 'black';
-        }
-    });
-});
-}
-
+container.addEventListener('mouseenter', (event) => {  //Event delegation method
+    if(event.target.className === 'columnDiv') {
+        event.target.style.background = 'black';
+    }
+}, true) //Enable during capturing phase
