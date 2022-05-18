@@ -1,17 +1,19 @@
-body {
+#buttons {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    margin: 20px;
+    gap: 10px;
 }
-
 #container {
     display: flex;
     flex-direction: column;
-    background-color: lightgrey;
+    background-color: white;
     width: 500px;
     height: 500px;
     border: black 5px solid;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #container .rowDiv {

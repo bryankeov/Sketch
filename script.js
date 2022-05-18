@@ -25,10 +25,29 @@ function gridSize() {
         alert("Invalid number")
     }
 }
-
-
 container.addEventListener('mouseenter', (event) => {  //Event delegation method
     if(event.target.className === 'columnDiv') {
         event.target.style.background = 'black';
     }
 }, true) //Enable during capturing phase
+
+function black() {
+    container.addEventListener('mouseenter', (event) => {  //Event delegation method
+        if(event.target.className === 'columnDiv') {
+            event.target.style.background = 'black';
+        }
+    }, true) //Enable during capturing phase
+}
+
+function rainbow() {
+    container.addEventListener('mouseenter', (event) => {  //Event delegation method
+        if(event.target.className === 'columnDiv') {
+            let letters = "0123456789ABCDEF";
+            let colour = "#";
+            for (let i = 0; i < 6; i++) {
+                colour += letters[Math.floor(Math.random() * 16)];
+            }
+            event.target.style.background = colour;
+        }
+    }, true) //Enable during capturing phase
+}
